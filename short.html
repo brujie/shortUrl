@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>短链接生成</title>
+	<link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<body>
+	<div class="box">
+		<label for="long" class="inp">
+			<input type="text" id="long" placeholder="&nbsp;">
+			<span class="label">长链接</span>
+			<span class="focus-bg"></span>
+		</label>
+		<button type="button" id="generate">生成短链接</button>
+		<div style="text-align: center;">
+			<label for="short" class="inp short">
+				<input type="text" id="short" placeholder="&nbsp;">
+				<span class="label">短链接</span>
+				<span class="focus-bg"></span>
+			</label>
+			<button type="button" id="copy" style="width:100px;" data-clipboard-action="copy" data-clipboard-target="#short">Copy</button>
+		</div>
+  </div>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+	<script src="./js/clipboard.min.js"></script>
+	<script>
+		$('#generate').click(() => {
+			let longUrl = $('#long').val();
+			if (longUrl) {
+				$.ajax({
+					url: 'http://localhost:5000/api/url/short',
+					type: 'POST',
+					data: JSON.stringify({'longUrl':longUrl}),
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					async: false,
+					success: function(res) {
+						$('#short').val(res.shortUrl);
+					},
+					fail:function(res){
+						alert(res);
+					}
+			});
+			} else {
+				alert('请输入原始链接');
+			}
+		})
+		let clipboard = new ClipboardJS('#copy');
+		clipboard.on('success', function (e) {
+			e.clearSelection();
+			$('#copy').text('Copied!');
+			setTimeout(() => {
+				$('#copy').text('Copy');
+			}, 2000)
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+POST http://localhost:5000/api/url/short
+content-type: application/json
+
+{
+  "longUrl": "https://element.eleme.io/#/zh-CN/component/image"
+}

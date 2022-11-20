@@ -1,0 +1,19 @@
+{
+  "name": "shortUrlServer",
+  "version": "1.0.0",
+  "description": "短链接生成服务搭建",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node index.js"
+  },
+  "dependencies": {
+    "config": "^3.2.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9",
+    "shortid": "^2.2.14",
+    "valid-url": "^1.0.9"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
