@@ -28,3 +28,5 @@ url长链接转化为短链接
 [mongodb下载安装教程](https://blog.csdn.net/baidu_39298625/article/details/98592631?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-98592631-blog-118633286.pc_relevant_recovery_v2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-98592631-blog-118633286.pc_relevant_recovery_v2&utm_relevant_index=3 )
 
 [短链接参考](https://cloud.tencent.com/developer/article/1492175?from=article.detail.1858351)
+
+[内网穿透](https://blog.csdn.net/weixin_42063820/article/details/124563983)
