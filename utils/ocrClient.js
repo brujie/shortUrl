@@ -3,8 +3,8 @@ const OcrClient = tencentcloud.ocr.v20181119.Client;
 
 const clientConfig = {
   credential: {
-    secretId: "AKIDjIcuGMbSq0vb1e5aT6twJRJHW8VcEG6l",
-    secretKey: "YsysXVXIL8BUYjenPl46MPDm4Us0nIp7",
+    secretId: "secretId", // 替换自己的secretId
+    secretKey: "secretKey", //  替换自己的secretKey
   },
   region: "ap-beijing",
   profile: {
