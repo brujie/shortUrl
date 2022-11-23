@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="UTF-8">
 	<title>短链接生成</title>
 	<link rel="icon" href="./favicon.ico">
-  <link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
 </head>
+
 <body>
 	<div class="box">
 		<label for="long" class="inp">
@@ -21,32 +22,41 @@
 				<span class="label">短链接</span>
 				<span class="focus-bg"></span>
 			</label>
-			<button type="button" id="copy" style="width:100px;" data-clipboard-action="copy" data-clipboard-target="#short">Copy</button>
+			<button type="button" id="copy" style="width:100px;" data-clipboard-action="copy"
+				data-clipboard-target="#short">Copy</button>
 		</div>
-  </div>
-  <script src="./js/jquery-3.5.1.min.js"></script>
+	</div>
+	<script src="./js/jquery-3.5.1.min.js"></script>
 	<script src="./js/clipboard.min.js"></script>
 	<script>
-		let baseUrl = 'http://xxxx.natappxxxx'; // 内网穿透随机地址
+		let localUrl;	// 本地执行配置地址
+		let baseUrl = window.location.origin; // 内网穿透随机地址
+		$.ajax({
+			url: './config/default.json',
+			type: 'GET',
+			success: function (res) {
+				localUrl = res.baseUrl;
+			},
+		})
 		$('#generate').click(() => {
 			let longUrl = $('#long').val();
 			if (longUrl) {
 				$.ajax({
-					url: 'http://localhost:5000/api/url/short',
+					url: `${baseUrl}/api/url/short`,
 					type: 'POST',
-					data: JSON.stringify({'longUrl':longUrl}),
+					data: JSON.stringify({
+						'longUrl': longUrl
+					}),
 					contentType: 'application/json; charset=utf-8',
 					dataType: 'json',
 					async: false,
-					success: function(res) {
-						// $('#short').val(res.shortUrl);
-						// 根据个人本地端口号进行配置修改
-						$('#short').val(baseUrl ? res.shortUrl.replace('http://localhost:5000', baseUrl) : res.shortUrl);
+					success: function (res) {
+						$('#short').val(baseUrl ? res.shortUrl.replace(localUrl, baseUrl) : res.shortUrl);
 					},
-					fail:function(res){
-						alert(res);
+					error: function () {
+						alert('短链接生成失败!');
 					}
-			});
+				});
 			} else {
 				alert('请输入原始链接');
 			}
@@ -61,4 +71,5 @@
 		});
 	</script>
 </body>
+
 </html>

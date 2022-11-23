@@ -15,6 +15,10 @@ url长链接转化为短链接
  "mongoose": "^5.6.9",	// 连接mongodb
  "shortid": "^2.2.14",	// 短链接id生成
  "valid-url": "^1.0.9"	// 校验url地址
+ // 新增
+ "desktop-screenshot": "^0.1.1" // 屏幕截取
+ "tencentcloud-sdk-nodejs": "^4.0.486" // 腾讯云orc识别
+ "opn": "^6.0.0" // 自动打开浏览器
 ```
 
 项目图片
@@ -23,10 +27,14 @@ url长链接转化为短链接
 
 ![1668855683943.png](image/readme/1668855683943.png)
 
+使用内网穿透支持外网访问项目
+
+![微信截图_20221122163521](C:\Users\rujie\Desktop\微信截图_20221122163521.png)
+
+node截取屏幕,通过腾讯云ocr识别进行数据处理,获取随机返回的url进行访问短链接服务
+
 搭建项目参考链接
 
 [mongodb下载安装教程](https://blog.csdn.net/baidu_39298625/article/details/98592631?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-98592631-blog-118633286.pc_relevant_recovery_v2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-98592631-blog-118633286.pc_relevant_recovery_v2&utm_relevant_index=3 )
 
 [短链接参考](https://cloud.tencent.com/developer/article/1492175?from=article.detail.1858351)
-
-[内网穿透](https://blog.csdn.net/weixin_42063820/article/details/124563983)

@@ -15,5 +15,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.1.3",
+    "desktop-screenshot": "^0.1.1",
+    "opn": "^6.0.0",
+    "tencentcloud-sdk-nodejs": "^4.0.486"
+  }
 }
