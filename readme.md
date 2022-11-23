@@ -22,14 +22,12 @@ url长链接转化为短链接
 ```
 
 项目图片
-
-![1668853664893.png](image/readme/1668853664893.png)
-
-![1668855683943.png](image/readme/1668855683943.png)
+![1668853171518](https://user-images.githubusercontent.com/54068022/203448614-55077d6d-de71-4845-8916-2c8a22e51957.png)
+![1668853664893](https://user-images.githubusercontent.com/54068022/203448629-5635e1fd-af18-4343-9cba-16a503a1a39f.png)
 
 使用内网穿透支持外网访问项目
 
-![微信截图_20221122163521](C:\Users\rujie\Desktop\微信截图_20221122163521.png)
+![微信截图_20221122163521](https://user-images.githubusercontent.com/54068022/203448666-c90ca4d5-dcbd-4041-9a6f-41e7647f511b.png)
 
 node截取屏幕,通过腾讯云ocr识别进行数据处理,获取随机返回的url进行访问短链接服务
 
